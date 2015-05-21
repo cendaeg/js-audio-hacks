@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="leap-0.6.3.js"></script>
+  <script src="leap-plugins-0.1.8.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="three">
+<div class="logo"><img src="Theremin.png" /></div>
+<h1>leonjs</h1><br /><br />
+<h2 id="output">1</h2>
+  <div class="instruments">
+    <input class="instrument" id="drum" name="instruments[]" type="checkbox" value="drum"/> <label for="drum">Drums</label>
+    <input class="instrument" id="lowDrum" name="instruments[]" type="checkbox" value="lowDrum"/> <label for="lowDrum">Low Drums</label>
+    <input class="instrument" id="pluck" name="instruments[]" type="checkbox" value="pluck"/> <label for="pluck">Pluck</label>
+    <input class="instrument" id="violin" name="instruments[]" type="checkbox" value="violin"/> <label for="violin">Violin</label>
+    <input class="instrument" id="chord" name="instruments[]" type="checkbox" value="chord"/> <label for="chord">Chord</label>
+    <input class="instrument" id="clarinet" name="instruments[]" type="checkbox" value="clarinet"/> <label for="clarinet">Clarinet</label>
+    <input class="instrument" id="bass" name="instruments[]" type="checkbox" value="bass"/> <label for="bass">Bass</label>
+  </div>
+  <script src="compile.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="beatMachine">
+<head>
+  <link id="favicon" rel="shortcut icon" type="image/png" href="favicon.png" /></head>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.14/angular.min.js"></script>
+
+  <style>
+    .beat {
+      height:50px;
+      background:#AB5155;
+      width:50px;
+      display:inline-block;
+      margin:0 5px;
+    }
+    .beat.on {
+      background:#5E0A09;
+    }
+  </style>
+</head>
+<body ng-controller="app">
+  <div class="beatmachine">
+    <div class="beat" ng-click="activate(beat)" ng-class="{on: beat.on}" ng-repeat="beat in beats">
+    </div>
+  </div>
+  <canvas></canvas>
+  <script src="beats.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

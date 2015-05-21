@@ -1,0 +1,15 @@
+{
+  "name": "LeonJS",
+  "version": "1.0.0",
+  "description": "",
+  "main": "audio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Conlin Durbin",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.12.0",
+    "socket.io": "^1.3.4"
+  }
+}

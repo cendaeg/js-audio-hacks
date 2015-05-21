@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//js.leapmotion.com/leap-0.6.3.js"></script>
+  <script src="//js.leapmotion.com/leap-plugins-0.1.8.js"></script>
+  <script src="https://rawgit.com/roironn/SmileDetectJS/master/js/haar-detector.js"></script>
+  <script src="https://rawgit.com/roironn/SmileDetectJS/master/js/smile-detector.js"></script>
+  <script src="https://rawgit.com/auduno/headtrackr/master/headtrackr.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="two">
+  <canvas class="background"></canvas>
+  <h1>leonjs</h1>
+  <h2>start waving</h2>
+  <br />
+  <br />
+  <video id="vid" height="426" width="640" autoplay></video>
+  <canvas class="other"></canvas>
+  <canvas id="inputCanvas" width="320" height="240" style="display:none"></canvas>
+  <script src="compile.js"></script>
+</body>
+</html>
