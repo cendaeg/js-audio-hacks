@@ -3,6 +3,15 @@ class Instrument {
     this.tau = 2 * Math.PI;
     this.t = t;
   }
+  sin(x) {
+    return Math.sin(this.tau * this.t * x);
+  }
+  square(x) {
+    return this.sin(x) > 0 ? 1 : -1;
+  }
+  saw(x) {
+    return 1 - 2 * (this.t % (1 / x)) * x;
+  }
   drums() { return this.t % (1/2) < 1/16 ? 2*Math.random()-1 : 0 };
   bass(x) { return this.t % (1) < 1/4 ? Math.sin((this.tau * this.t * x)) : 0 };
   lowDrums(x) { return this.t % (1/2) < 1/16 ? 10*Math.cos((this.tau * this.t * x)) : 0 };
@@ -29,6 +38,10 @@ class Instrument {
   };
 }
 
+function freq(note) {
+  return Math.pow(2, (note.key - 49) / 12) * 440 / note.octave;
+};
+
 
 class Note {
   constructor(key, dur) {
@@ -53,40 +66,40 @@ class Note {
 }
 
 /*class Buffer {
-  constructor(ctx) {
-    this.ctx = ctx;
-    this.bufferList = [];
-    this.bufferSources = [];
-  }
-  createAllBufferSources() {
-    for (var i = 0; i < this.bufferList.length; i++) {
-      this.ctx.decodeAudioData(this.bufferList[i], function(buffer)
-      {
-        var source = createBufferSource();
-        bufferData = buffer;
-        source.buffer = bufferData;
-        source.loop = true;
-        this.bufferSources.push(source);
-      }, this.onDecodeError);
-    }
-  }
-  createBuffer(cb, dur) {
-    var arrayBuffer = new Float32Array(44100*dur);
-    for(var i = 0; i < 44100*dur; i++) {
-      arrayBuffer[i] = cb(this.frequencyAdjust, i/44100);
-    }
-    this.bufferList.push(arrayBuffer);
-  }
-  getBuffers() {
-    return this.bufferList;
-  }
-  updateBuffer(cb, dur) {
-    var arrayBuffer = [];
-    for(var i = 0; i < 44100*dur; i++) {
-      arrayBuffer[i] = cb(this.frequencyAdjust, i/44100);
-    }
-    this.bufferList.push(arrayBuffer);
-  }
+constructor(ctx) {
+this.ctx = ctx;
+this.bufferList = [];
+this.bufferSources = [];
+}
+createAllBufferSources() {
+for (var i = 0; i < this.bufferList.length; i++) {
+this.ctx.decodeAudioData(this.bufferList[i], function(buffer)
+{
+var source = createBufferSource();
+bufferData = buffer;
+source.buffer = bufferData;
+source.loop = true;
+this.bufferSources.push(source);
+}, this.onDecodeError);
+}
+}
+createBuffer(cb, dur) {
+var arrayBuffer = new Float32Array(44100*dur);
+for(var i = 0; i < 44100*dur; i++) {
+arrayBuffer[i] = cb(this.frequencyAdjust, i/44100);
+}
+this.bufferList.push(arrayBuffer);
+}
+getBuffers() {
+return this.bufferList;
+}
+updateBuffer(cb, dur) {
+var arrayBuffer = [];
+for(var i = 0; i < 44100*dur; i++) {
+arrayBuffer[i] = cb(this.frequencyAdjust, i/44100);
+}
+this.bufferList.push(arrayBuffer);
+}
 }*/
 
 
